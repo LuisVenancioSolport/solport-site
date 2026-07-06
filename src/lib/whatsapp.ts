@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "5511947599009";
+const WHATSAPP_NUMBER = "551147599009";
 
 // Mensagens pré-preenchidas — RPD v4.0, Apêndice B
 export const WHATSAPP_MESSAGES = {
