@@ -15,7 +15,7 @@ const CHIPS = [
   { label: "Eletropostos", href: "/eletromobilidade", icon: Zap, accent: "magenta" as const },
   { label: "Portaria Virtual", href: "/solucoes/portaria-virtual", icon: ShieldCheck, accent: "cyan" as const },
   { label: "Análise de Carga", href: "/eletromobilidade", icon: Gauge, accent: "magenta" as const },
-  { label: "Análise de Risco", href: "#diagnostico", icon: ShieldAlert, accent: "cyan" as const },
+  { label: "Análise de Risco", href: "/diagnostico", icon: ShieldAlert, accent: "cyan" as const },
   { label: "CFTV", href: "/solucoes/cftv", icon: Camera, accent: "cyan" as const },
   { label: "Controle de Acesso", href: "/solucoes/controle-de-acesso", icon: Fingerprint, accent: "cyan" as const },
   { label: "Alarme", href: "/solucoes/alarmes", icon: BellRing, accent: "cyan" as const },
@@ -37,13 +37,21 @@ export function QuickChips() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: i * 0.04 }}
               >
-                <a
+                <motion.a
                   href={chip.href}
+                  animate={{ y: [0, -5, 0] }}
+                  transition={{
+                    duration: 3.2,
+                    delay: i * 0.25,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  whileHover={{ y: -8, transition: { duration: 0.2 } }}
                   className={`inline-flex items-center gap-2 rounded-chip border border-surface-muted bg-surface-light px-4 py-2 text-sm font-medium text-navy transition ${glow}`}
                 >
                   <Icon className="h-4 w-4 text-brand-red" aria-hidden="true" />
                   {chip.label}
-                </a>
+                </motion.a>
               </motion.li>
             );
           })}
