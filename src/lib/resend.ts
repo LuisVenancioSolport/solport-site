@@ -48,10 +48,14 @@ export async function sendLeadNotification(lead: LeadPayload): Promise<void> {
 
   const to = process.env.LEAD_NOTIFICATION_EMAIL ?? "contato@solport.com.br";
 
-  await resend.emails.send({
+  const { error } = await resend.emails.send({
     from: "Solport Site <onboarding@resend.dev>",
     to,
     subject: `Novo lead (${lead.tipo_formulario}) — ${lead.nome}`,
     html: renderLeadEmailHtml(lead),
   });
+
+  if (error) {
+    console.error("[resend] Falha ao enviar notificação:", error);
+  }
 }
