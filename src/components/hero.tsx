@@ -16,7 +16,7 @@ export function Hero() {
       <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-neon-cyan/25 blur-3xl" />
       <div className="absolute -right-16 bottom-0 h-80 w-80 rounded-full bg-neon-magenta/25 blur-3xl" />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 py-24 sm:px-6 sm:py-32 lg:grid-cols-2 lg:px-8">
+      <div className="relative mx-auto grid max-w-7xl items-start gap-12 px-4 pb-20 pt-12 sm:px-6 sm:pb-28 sm:pt-16 lg:grid-cols-2 lg:px-8">
         <div className="flex flex-col items-start">
           <motion.span
             initial={{ opacity: 0, y: 12 }}
