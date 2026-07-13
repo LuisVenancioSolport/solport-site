@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHero } from "@/components/page-hero";
 import { ComparisonTable } from "@/components/comparison-table";
 import { HowItWorks } from "@/components/how-it-works";
@@ -57,6 +58,15 @@ export default function PortariaVirtualPage() {
         whatsappMessage={WHATSAPP_MESSAGES.diagnostico}
         accent="cyan"
       />
+      <div className="relative h-64 w-full sm:h-80 lg:h-[420px]">
+        <Image
+          src="/posters/portaria-virtual.png"
+          alt="Atendente da Solport realizando o atendimento de portaria virtual"
+          fill
+          priority
+          className="object-cover"
+        />
+      </div>
       <ComparisonTable />
       <HowItWorks />
       <FAQ title="Perguntas sobre Portaria Virtual" items={FAQ_ITEMS} />

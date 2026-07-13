@@ -62,6 +62,7 @@ export default function AlarmesPage() {
       eyebrow="Segurança 24/7"
       title="Alarme e Vídeo Alarme com resposta rápida"
       subtitle="Detecção de invasão com verificação por vídeo e acionamento remoto, com SLA de resposta documentado."
+      image={{ src: "/posters/alarmes.png", alt: "Atendente da central Solport verificando um alarme por vídeo antes de acionar a resposta" }}
       heroBullets={[
         "Sensores de abertura e movimento em áreas comuns",
         "Vídeo alarme com verificação em tempo real antes do acionamento",

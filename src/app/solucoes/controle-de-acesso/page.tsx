@@ -62,6 +62,7 @@ export default function ControleDeAcessoPage() {
       eyebrow="Segurança 24/7"
       title="Controle de Acesso por biometria e QR Code"
       subtitle="Gestão de entrada para moradores, visitantes e prestadores, com registro automático de cada acesso."
+      image={{ src: "/posters/controle-de-acesso.png", alt: "Morador liberando o acesso por biometria digital" }}
       heroBullets={[
         "Biometria facial ou digital para moradores",
         "QR Code temporário para visitantes e prestadores",

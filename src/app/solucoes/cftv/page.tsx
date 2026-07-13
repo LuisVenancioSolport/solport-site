@@ -62,6 +62,7 @@ export default function CFTVPage() {
       eyebrow="Segurança 24/7"
       title="CFTV com imagens nítidas e auditoria completa"
       subtitle="Câmeras de alta definição, gravação contínua e monitoramento integrado à Portaria Virtual para dar rastreabilidade total ao seu condomínio."
+      image={{ src: "/posters/cftv.png", alt: "Câmera de CFTV Solport instalada na fachada de um condomínio" }}
       heroBullets={[
         "Câmeras HD/4K em pontos estratégicos (portaria, garagem, áreas comuns)",
         "Gravação contínua com retenção configurável",
