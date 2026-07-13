@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ShieldCheck, Camera, Fingerprint, BellRing, ArrowRight } from "lucide-react";
+import { ShieldCheck, Camera, Fingerprint, BellRing, Radar, ArrowRight } from "lucide-react";
 
 const SOLUTIONS = [
   {
@@ -33,6 +33,13 @@ const SOLUTIONS = [
     tags: [],
     href: "/solucoes/alarmes",
   },
+  {
+    icon: Radar,
+    title: "Watching U",
+    text: "Totem com câmeras HD e QR Code, integrado ao Smart Sampa e à Muralha Paulista.",
+    tags: [],
+    href: "/solucoes/watching-u",
+  },
 ];
 
 export function SolutionsGrid() {
@@ -49,7 +56,7 @@ export function SolutionsGrid() {
           Soluções de segurança 24/7
         </motion.h2>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {SOLUTIONS.map((sol, i) => {
             const Icon = sol.icon;
             return (

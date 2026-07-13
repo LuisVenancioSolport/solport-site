@@ -8,10 +8,12 @@ import { trackEvent } from "@/lib/analytics";
 
 const NAV_LINKS = [
   { label: "Eletromobilidade", href: "/eletromobilidade" },
+  { label: "App Solport", href: "/app-solport" },
   { label: "Portaria Virtual", href: "/solucoes/portaria-virtual" },
   { label: "CFTV", href: "/solucoes/cftv" },
   { label: "Controle de Acesso", href: "/solucoes/controle-de-acesso" },
   { label: "Alarme e Vídeo Alarme", href: "/solucoes/alarmes" },
+  { label: "Watching U", href: "/solucoes/watching-u" },
   { label: "Diagnóstico 360°", href: "/diagnostico" },
   { label: "Agendar", href: "/agendar" },
   { label: "Cases", href: "/cases" },

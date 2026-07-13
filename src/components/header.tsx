@@ -13,6 +13,7 @@ const SOLUTIONS_LINKS = [
   { label: "CFTV", href: "/solucoes/cftv" },
   { label: "Controle de Acesso", href: "/solucoes/controle-de-acesso" },
   { label: "Alarme e Vídeo Alarme", href: "/solucoes/alarmes" },
+  { label: "Watching U", href: "/solucoes/watching-u" },
 ];
 
 export function Header() {
@@ -32,6 +33,10 @@ export function Header() {
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Navegação principal">
           <Link href="/eletromobilidade" className="text-sm font-medium text-navy/80 transition hover:text-brand-red">
             Eletromobilidade
+          </Link>
+
+          <Link href="/app-solport" className="text-sm font-medium text-navy/80 transition hover:text-brand-red">
+            App Solport
           </Link>
 
           <div className="group relative">
@@ -108,6 +113,15 @@ export function Header() {
                 className="block rounded-chip px-3 py-2.5 text-sm font-medium text-navy/80 transition hover:bg-surface-light hover:text-brand-red"
               >
                 Eletromobilidade
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/app-solport"
+                onClick={() => setMenuOpen(false)}
+                className="block rounded-chip px-3 py-2.5 text-sm font-medium text-navy/80 transition hover:bg-surface-light hover:text-brand-red"
+              >
+                App Solport
               </Link>
             </li>
             <li>

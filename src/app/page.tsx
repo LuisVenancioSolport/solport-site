@@ -3,6 +3,7 @@ import { QuickChips } from "@/components/quick-chips";
 import { ElectromobilityHighlight } from "@/components/electromobility-highlight";
 import { HowItWorks } from "@/components/how-it-works";
 import { SolutionsGrid } from "@/components/solutions-grid";
+import { AppSolportHighlight } from "@/components/app-solport-highlight";
 import { ProofSection } from "@/components/proof-section";
 import { Differentiators } from "@/components/differentiators";
 import { FAQ } from "@/components/faq";
@@ -18,6 +19,7 @@ export default function Home() {
       <ElectromobilityHighlight />
       <HowItWorks />
       <SolutionsGrid />
+      <AppSolportHighlight />
       <ProofSection />
       <Differentiators />
       <FAQ />

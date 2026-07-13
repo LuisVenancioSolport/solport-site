@@ -1,6 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { PageHero } from "@/components/page-hero";
 import { HowItWorks } from "@/components/how-it-works";
@@ -14,6 +15,12 @@ export interface SolutionFeature {
   text: string;
 }
 
+interface SolutionPageImage {
+  src: string;
+  alt: string;
+  heightClassName?: string;
+}
+
 interface SolutionPageTemplateProps {
   breadcrumbLabel: string;
   eyebrow: string;
@@ -21,9 +28,11 @@ interface SolutionPageTemplateProps {
   subtitle: string;
   heroBullets: string[];
   ctaLabel: string;
+  image?: SolutionPageImage;
   features: SolutionFeature[];
   faqItems: FAQItem[];
   diagnosticoQuery?: string;
+  afterFeatures?: ReactNode;
 }
 
 export function SolutionPageTemplate({
@@ -33,9 +42,11 @@ export function SolutionPageTemplate({
   subtitle,
   heroBullets,
   ctaLabel,
+  image,
   features,
   faqItems,
   diagnosticoQuery = "",
+  afterFeatures,
 }: SolutionPageTemplateProps) {
   return (
     <>
@@ -49,6 +60,12 @@ export function SolutionPageTemplate({
         whatsappMessage={WHATSAPP_MESSAGES.diagnostico}
         accent="cyan"
       />
+
+      {image && (
+        <div className={`relative w-full ${image.heightClassName ?? "h-64 sm:h-80 lg:h-[420px]"}`}>
+          <Image src={image.src} alt={image.alt} fill priority className="object-cover" />
+        </div>
+      )}
 
       <section className="bg-white py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -84,6 +101,8 @@ export function SolutionPageTemplate({
           </div>
         </div>
       </section>
+
+      {afterFeatures}
 
       <HowItWorks />
       <FAQ items={faqItems} />

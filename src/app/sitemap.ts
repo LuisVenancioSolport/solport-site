@@ -5,10 +5,12 @@ const SITE_URL = "https://www.solport.com.br";
 const ROUTES = [
   "",
   "/eletromobilidade",
+  "/app-solport",
   "/solucoes/portaria-virtual",
   "/solucoes/cftv",
   "/solucoes/controle-de-acesso",
   "/solucoes/alarmes",
+  "/solucoes/watching-u",
   "/diagnostico",
   "/agendar",
   "/cases",
