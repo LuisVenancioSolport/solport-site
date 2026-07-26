@@ -67,6 +67,10 @@ export function Header() {
           <Link href="/diagnostico" className="text-sm font-medium text-navy/80 transition hover:text-brand-red">
             Diagnóstico 360°
           </Link>
+
+          <Link href="/blog" className="text-sm font-medium text-navy/80 transition hover:text-brand-red">
+            Blog
+          </Link>
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-3">
@@ -161,6 +165,15 @@ export function Header() {
                 className="block rounded-chip px-3 py-2.5 text-sm font-medium text-navy/80 transition hover:bg-surface-light hover:text-brand-red"
               >
                 Diagnóstico 360°
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog"
+                onClick={() => setMenuOpen(false)}
+                className="block rounded-chip px-3 py-2.5 text-sm font-medium text-navy/80 transition hover:bg-surface-light hover:text-brand-red"
+              >
+                Blog
               </Link>
             </li>
             <li>

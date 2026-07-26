@@ -17,6 +17,7 @@ const NAV_LINKS = [
   { label: "Diagnóstico 360°", href: "/diagnostico" },
   { label: "Agendar", href: "/agendar" },
   { label: "Cases", href: "/cases" },
+  { label: "Blog", href: "/blog" },
 ];
 
 export function Footer() {
