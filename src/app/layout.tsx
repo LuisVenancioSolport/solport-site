@@ -24,9 +24,12 @@ const siteUrl = "https://www.solport.com.br";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Solport | Segurança Eletrônica e Eletromobilidade para Condomínios em SP",
+  title: "Solport | Segurança e Eletromobilidade em Condomínios SP",
   description:
-    "Portaria Virtual, CFTV, Controle de Acesso, Alarme e Eletropostos para condomínios em todo o estado de São Paulo. Agende seu Diagnóstico 360°.",
+    "Portaria Virtual, CFTV, Controle de Acesso, Alarme e Eletropostos para condomínios em todo o estado de São Paulo. Agende seu Diagnóstico 360° gratuito.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Solport | Segurança inteligente e eletromobilidade para condomínios de São Paulo",
     description:

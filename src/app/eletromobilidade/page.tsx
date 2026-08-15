@@ -11,9 +11,10 @@ import { FinalCTA } from "@/components/final-cta";
 import { WHATSAPP_MESSAGES } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
-  title: "Eletromobilidade para Condomínios em SP | Solport",
+  title: "Eletropostos em Condomínios de São Paulo | Solport",
   description:
-    "Análise de carga, infraestrutura com ART e instalação de eletropostos em condomínios residenciais e comerciais em todo o estado de São Paulo.",
+    "Eletropostos em condomínios de São Paulo: Diagnóstico 360° gratuito, projeto com ART conforme a NBR 17019 e simulação de prazo e payback antes da instalação.",
+  alternates: { canonical: "/eletromobilidade" },
 };
 
 const FAQ_ITEMS: FAQItem[] = [
@@ -50,13 +51,13 @@ export default function EletromobilidadePage() {
       <PageHero
         breadcrumbLabel="Eletromobilidade"
         eyebrow="Eletromobilidade"
-        title="Leve a recarga elétrica para o seu condomínio, com segurança e o dimensionamento certo."
-        subtitle="Análise de carga, infraestrutura com ART e instalação em vaga privada ou áreas comuns — para condomínios residenciais e comerciais em todo o estado de São Paulo."
+        title="Eletropostos em Condomínios de São Paulo: comece com um Diagnóstico 360° gratuito e um projeto conforme a NBR 17019."
+        subtitle="Do Diagnóstico 360° no local ao projeto executivo com ART — simulação de prazo e payback antes de qualquer instalação."
         bullets={[
-          "Análise de carga elétrica disponível no condomínio",
-          "Projeto de infraestrutura para eletropostos com ART",
-          "Instalação em vaga privada ou em áreas comuns (comercial e residencial)",
-          "Billing individualizado por unidade",
+          "Diagnóstico 360° gratuito no local: levantamento técnico completo para orçamento, antes de qualquer decisão",
+          "Projeto de infraestrutura para eletropostos com ART/CREA, dimensionado pelo fator de demanda real (NBR 17019)",
+          "Instalação em vaga privada ou em áreas comuns (comercial e residencial), com billing individualizado por unidade",
+          "Referência real: no Residencial Alto da Serra, 18 vagas foram instaladas em 21 dias, com payback estimado em 14 meses — a mesma simulação que fazemos para o seu condomínio a partir do Diagnóstico 360°",
         ]}
         ctaLabel="Solicitar Análise de Carga / Viabilidade Técnica"
         whatsappMessage={WHATSAPP_MESSAGES.eletropostos}

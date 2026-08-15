@@ -6,7 +6,8 @@ import type { FAQItem } from "@/components/faq";
 export const metadata: Metadata = {
   title: "CFTV para Condomínios em SP | Solport",
   description:
-    "Câmeras de alta definição, gravação contínua e monitoramento integrado à Portaria Virtual para condomínios em todo o estado de São Paulo.",
+    "Câmeras de alta definição, gravação contínua e monitoramento integrado à Portaria Virtual e ao Controle de Acesso, para condomínios em todo o estado de SP.",
+  alternates: { canonical: "/solucoes/cftv" },
 };
 
 const FEATURES: SolutionFeature[] = [
@@ -36,7 +37,17 @@ const FAQ_ITEMS: FAQItem[] = [
   {
     question: "Por quanto tempo as imagens ficam armazenadas?",
     answer:
-      "O período de retenção é configurável conforme a necessidade e o orçamento do condomínio, respeitando a LGPD.",
+      "As imagens são mantidas por um período mínimo de 30 dias e máximo de 90 dias, findo o qual são eliminadas automaticamente, salvo obrigação legal ou determinação judicial em contrário. Consulte nossa Política de Privacidade para mais detalhes.",
+  },
+  {
+    question: "Como sei que a área está sendo monitorada por câmeras?",
+    answer:
+      "Todo local com captação de imagem recebe sinalização visível informando o monitoramento por câmeras, conforme a LGPD (art. 6º, princípio da transparência). A instalação já inclui essa sinalização.",
+  },
+  {
+    question: "Quem é o responsável pelos dados tratados no CFTV?",
+    answer:
+      "A Solport atua como controladora dos dados tratados na prestação do serviço, nos termos do art. 42 da LGPD, sendo responsável por eventuais danos decorrentes de tratamento em desacordo com a lei. Consulte nossa Política de Privacidade para detalhes.",
   },
   {
     question: "As câmeras funcionam à noite?",

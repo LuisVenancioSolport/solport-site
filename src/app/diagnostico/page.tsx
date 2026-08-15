@@ -5,7 +5,8 @@ import { DiagnosticoForm } from "@/components/diagnostico-form";
 export const metadata: Metadata = {
   title: "Diagnóstico 360° | Solport",
   description:
-    "Avaliação completa de segurança eletrônica e/ou viabilidade de eletropostos para o seu condomínio, sem compromisso.",
+    "Diagnóstico 360° gratuito: avaliação completa de segurança eletrônica e/ou viabilidade técnica de eletropostos para o seu condomínio, sem compromisso.",
+  alternates: { canonical: "/diagnostico" },
 };
 
 export default function DiagnosticoPage() {

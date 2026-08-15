@@ -10,7 +10,8 @@ import { WHATSAPP_MESSAGES } from "@/lib/whatsapp";
 export const metadata: Metadata = {
   title: "Portaria Virtual em São Paulo | Solport",
   description:
-    "Portaria Virtual em três modalidades — Integral 24/7, Por Turno e Autônoma — para condomínios em todo o estado de São Paulo.",
+    "Portaria Virtual em São Paulo: Integral 24/7, Por Turno ou Autônoma, com SLA de resposta documentado — mesmo resultado do case Jardins do Vale: -38% de custo.",
+  alternates: { canonical: "/solucoes/portaria-virtual" },
 };
 
 const FAQ_ITEMS: FAQItem[] = [
@@ -22,7 +23,17 @@ const FAQ_ITEMS: FAQItem[] = [
   {
     question: "Como fica a LGPD nas imagens e dados coletados?",
     answer:
-      "As imagens e registros de acesso são armazenados com controle de acesso restrito e usados apenas para fins de segurança. Consulte nossa Política de Privacidade para detalhes sobre retenção e exclusão de dados.",
+      "As imagens e registros de acesso são armazenados com controle de acesso restrito e usados apenas para fins de segurança. A Solport atua como controladora desses dados nos termos do art. 42 da LGPD. Consulte nossa Política de Privacidade para detalhes sobre retenção e exclusão de dados.",
+  },
+  {
+    question: "Como sei que a área está sendo monitorada?",
+    answer:
+      "Todo local com câmeras ou controle de acesso integrados à portaria virtual recebe sinalização visível informando o monitoramento, conforme a LGPD (art. 6º, princípio da transparência).",
+  },
+  {
+    question: "Por quanto tempo as imagens e registros ficam armazenados?",
+    answer:
+      "As imagens são mantidas por um período mínimo de 30 dias e máximo de 90 dias; os registros de acesso, por até 6 meses — findo o prazo, são eliminados automaticamente, salvo obrigação legal ou determinação judicial em contrário.",
   },
   {
     question: "Qual o tempo médio de implantação?",
@@ -53,6 +64,7 @@ export default function PortariaVirtualPage() {
           "Monitoramento contínuo com câmeras e controle de acesso integrados",
           "Três modalidades: Integral 24/7, Por Turno e Autônoma",
           "Registro e auditoria completos de cada movimentação",
+          "Referência real: no Jardins do Vale, a portaria virtual reduziu o custo mensal em 38% e chegou a 0 ocorrências não registradas em 12 meses, com SLA médio de resposta de 4 minutos",
         ]}
         ctaLabel="Agendar Diagnóstico 360°"
         whatsappMessage={WHATSAPP_MESSAGES.diagnostico}

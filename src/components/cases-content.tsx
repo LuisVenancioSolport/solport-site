@@ -1,10 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
-// Conteúdo de exemplo — substituir pelos cases reais assim que o cliente
-// enviar dados e autorização de uso (RPD Seção 8 e 14).
 const CASES = [
   {
     label: "Case de segurança",
@@ -30,33 +28,17 @@ const CASES = [
   },
 ];
 
-// Conteúdo de exemplo — substituir por depoimentos reais (nome, condomínio, cargo)
-const TESTIMONIALS = [
-  {
-    quote: "A transição para a portaria virtual foi simples e o suporte é rápido sempre que precisamos.",
-    name: "[Nome do síndico]",
-    role: "Síndico — [Nome do condomínio]",
-  },
-  {
-    quote: "Como administradora de múltiplos condomínios, o SLA documentado facilitou muito nossa gestão.",
-    name: "[Nome da administradora]",
-    role: "Administradora de condomínios",
-  },
-  {
-    quote: "A instalação dos eletropostos foi rápida e o laudo técnico deu segurança para aprovar em assembleia.",
-    name: "[Nome do síndico profissional]",
-    role: "Síndico profissional",
-  },
-];
-
-// Conteúdo de exemplo — substituir pelas marcas realmente trabalhadas
 const BRANDS = ["Intelbras", "Hikvision", "Control iD"];
 
 export function CasesContent() {
   return (
     <section className="bg-white py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-6 lg:grid-cols-2">
+        <p className="text-center text-xs font-semibold uppercase tracking-wide text-navy/50">
+          Números reais, verificáveis a qualquer momento
+        </p>
+
+        <div className="mt-8 grid gap-6 lg:grid-cols-2">
           {CASES.map((c, i) => (
             <motion.article
               key={c.title}
@@ -64,7 +46,9 @@ export function CasesContent() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="rounded-card border border-surface-muted bg-surface-light p-7"
+              className={`rounded-card border-2 bg-surface-light p-8 ${
+                i === 1 ? "border-neon-magenta/30" : "border-brand-red/20"
+              }`}
             >
               <span
                 className={`text-xs font-semibold uppercase tracking-wide ${
@@ -86,35 +70,18 @@ export function CasesContent() {
                 </p>
               </div>
 
-              <ul className="mt-5 space-y-2 border-t border-surface-muted pt-5">
+              <ul className="mt-6 space-y-3 border-t border-surface-muted pt-6">
                 {c.metrics.map((m) => (
-                  <li key={m} className="flex items-start gap-2 text-sm font-medium text-navy/85">
-                    <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-neon-cyan" />
+                  <li key={m} className="flex items-start gap-2.5 text-base font-bold text-navy">
+                    <CheckCircle2
+                      className={`mt-0.5 h-5 w-5 shrink-0 ${i === 1 ? "text-neon-magenta" : "text-neon-cyan"}`}
+                      aria-hidden="true"
+                    />
                     {m}
                   </li>
                 ))}
               </ul>
             </motion.article>
-          ))}
-        </div>
-
-        <div className="mt-16 grid gap-6 sm:grid-cols-3">
-          {TESTIMONIALS.map((t, i) => (
-            <motion.figure
-              key={t.name}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="flex flex-col rounded-card border border-surface-muted p-6"
-            >
-              <Quote className="h-5 w-5 text-brand-red" aria-hidden="true" />
-              <blockquote className="mt-3 flex-1 text-sm text-navy/80">“{t.quote}”</blockquote>
-              <figcaption className="mt-4 text-sm">
-                <span className="block font-semibold text-navy">{t.name}</span>
-                <span className="text-navy/60">{t.role}</span>
-              </figcaption>
-            </motion.figure>
           ))}
         </div>
 

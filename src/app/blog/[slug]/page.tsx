@@ -24,6 +24,7 @@ export function generateMetadata({ params }: BlogPostPageProps): Metadata {
   return {
     title: `${post.title} | Blog Solport`,
     description: post.excerpt,
+    alternates: { canonical: `/blog/${params.slug}` },
     openGraph: {
       title: post.title,
       description: post.excerpt,

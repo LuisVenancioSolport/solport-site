@@ -6,7 +6,8 @@ import type { FAQItem } from "@/components/faq";
 export const metadata: Metadata = {
   title: "Controle de Acesso para Condomínios em SP | Solport",
   description:
-    "Biometria e QR Code para moradores, visitantes e prestadores, com registro automático de cada acesso, em condomínios de todo o estado de São Paulo.",
+    "Biometria facial ou digital e QR Code para moradores, visitantes e prestadores, com registro automático de cada acesso, em condomínios de todo o estado de SP.",
+  alternates: { canonical: "/solucoes/controle-de-acesso" },
 };
 
 const FEATURES: SolutionFeature[] = [
@@ -51,7 +52,17 @@ const FAQ_ITEMS: FAQItem[] = [
   {
     question: "Como a LGPD é aplicada aos dados biométricos?",
     answer:
-      "Os dados biométricos são armazenados com controle de acesso restrito e usados exclusivamente para autenticação de entrada. Consulte nossa Política de Privacidade para detalhes de retenção e exclusão.",
+      "Os dados biométricos são armazenados com controle de acesso restrito e usados exclusivamente para autenticação de entrada. A Solport atua como controladora desses dados nos termos do art. 42 da LGPD. Consulte nossa Política de Privacidade para detalhes de retenção e exclusão.",
+  },
+  {
+    question: "Como sei que meus dados biométricos estão sendo coletados?",
+    answer:
+      "Os pontos de captação biométrica recebem sinalização visível informando a coleta, conforme a LGPD (art. 6º, princípio da transparência).",
+  },
+  {
+    question: "Por quanto tempo os registros de acesso ficam armazenados?",
+    answer:
+      "Os registros de acesso (entradas, saídas e tentativas) são mantidos por até 6 meses, findo o qual são eliminados automaticamente, salvo obrigação legal ou determinação judicial em contrário.",
   },
 ];
 

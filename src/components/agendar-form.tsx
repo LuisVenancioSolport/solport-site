@@ -67,7 +67,7 @@ export function AgendarForm() {
     return (
       <FormStatus
         status="success"
-        message="Solicitação de agendamento recebida! Nosso time confirma o horário com você em breve, se preferir, fale agora pelo WhatsApp."
+        message="Dados recebidos! Nosso time retorna o contato em até 1 dia útil — se preferir uma resposta imediata, fale agora pelo WhatsApp."
       />
     );
   }
@@ -112,7 +112,7 @@ export function AgendarForm() {
 
       {status === "error" && <FormStatus status="error" message={errorMessage} />}
 
-      <SubmitButton label="Solicitar agendamento" loading={status === "loading"} />
+      <SubmitButton label="Enviar meus dados" loading={status === "loading"} variant="secondary" />
     </form>
   );
 }

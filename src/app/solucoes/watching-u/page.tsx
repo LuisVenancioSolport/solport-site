@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Watching U | Totem de Vigilância Colaborativa para Condomínios em SP | Solport",
   description:
     "Totem com câmeras HD, QR Code para notificação de ocorrências e integração oficial com Smart Sampa e Muralha Paulista. Proteção 24h para condomínios, escolas, comércios e residências em SP.",
+  alternates: { canonical: "/solucoes/watching-u" },
 };
 
 const FEATURES: SolutionFeature[] = [
@@ -91,9 +92,12 @@ export default function WatchingUPage() {
       ]}
       ctaLabel="Agendar Diagnóstico 360°"
       image={{
-        src: "/posters/watching-u.png",
-        alt: "Totem Watching U instalado na entrada de um condomínio",
-        heightClassName: "h-72 sm:h-96 lg:h-[640px]",
+        src: "/posters/watching-u-detalhe-poste.jpg",
+        alt: "Detalhe do totem Watching U ao lado da vista panorâmica de um condomínio",
+        // Detalhe do poste + foto panorâmica lado a lado (3.02:1): usamos
+        // aspect-ratio em todas as telas para nunca cortar o poste em detalhe
+        // (altura fixa no mobile cortava quase todo o painel esquerdo).
+        heightClassName: "h-auto aspect-[3.02/1]",
       }}
       features={FEATURES}
       faqItems={FAQ_ITEMS}

@@ -6,7 +6,8 @@ import type { FAQItem } from "@/components/faq";
 export const metadata: Metadata = {
   title: "Alarme e Vídeo Alarme para Condomínios em SP | Solport",
   description:
-    "Detecção de invasão com verificação por vídeo e acionamento remoto, com SLA de resposta documentado, para condomínios em todo o estado de São Paulo.",
+    "Detecção de invasão com verificação por vídeo antes do acionamento remoto e SLA de resposta documentado, para condomínios em todo o estado de São Paulo.",
+  alternates: { canonical: "/solucoes/alarmes" },
 };
 
 const FEATURES: SolutionFeature[] = [
@@ -52,6 +53,26 @@ const FAQ_ITEMS: FAQItem[] = [
     question: "Como funciona a manutenção dos sensores?",
     answer:
       "Manutenção preventiva e corretiva incluídas no contrato de SLA, com suporte 24/7 para chamados críticos.",
+  },
+  {
+    question: "Como fica a LGPD nas imagens captadas pelo vídeo alarme?",
+    answer:
+      "As imagens usadas na verificação por vídeo são armazenadas com controle de acesso restrito e finalidade limitada à confirmação de alarme, seguindo a mesma política aplicada ao CFTV. Consulte nossa Política de Privacidade para detalhes sobre retenção e exclusão de dados.",
+  },
+  {
+    question: "Como sei que a área está sendo monitorada?",
+    answer:
+      "Todo local com verificação por vídeo recebe sinalização visível informando o monitoramento, conforme a LGPD (art. 6º, princípio da transparência). A instalação já inclui essa sinalização.",
+  },
+  {
+    question: "Quem é o responsável pelos dados tratados no alarme?",
+    answer:
+      "A Solport atua como controladora dos dados tratados na prestação do serviço, nos termos do art. 42 da LGPD, sendo responsável por eventuais danos decorrentes de tratamento em desacordo com a lei. Consulte nossa Política de Privacidade para detalhes.",
+  },
+  {
+    question: "Por quanto tempo as imagens do vídeo alarme ficam armazenadas?",
+    answer:
+      "As imagens são mantidas por um período mínimo de 30 dias e máximo de 90 dias, findo o qual são eliminadas automaticamente, salvo obrigação legal ou determinação judicial em contrário.",
   },
 ];
 

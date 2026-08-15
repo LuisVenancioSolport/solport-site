@@ -6,7 +6,8 @@ import { FinalCTA } from "@/components/final-cta";
 export const metadata: Metadata = {
   title: "Cases | Solport",
   description:
-    "Resultados reais de segurança eletrônica e eletromobilidade em condomínios de São Paulo, com números de custo, prazo e SLA.",
+    "Cases reais de segurança eletrônica e eletromobilidade em condomínios de São Paulo, com números verificáveis de custo, prazo e SLA — não apenas promessas.",
+  alternates: { canonical: "/cases" },
 };
 
 export default function CasesPage() {

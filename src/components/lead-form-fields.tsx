@@ -200,14 +200,22 @@ export function HoneypotField({ value, onChange }: HoneypotFieldProps) {
 interface SubmitButtonProps {
   label: string;
   loading?: boolean;
+  variant?: "primary" | "secondary";
 }
 
-export function SubmitButton({ label, loading }: SubmitButtonProps) {
+const SUBMIT_VARIANT_CLASS = {
+  primary:
+    "bg-brand-red text-white shadow-soft hover:shadow-glow-cyan",
+  secondary:
+    "border border-surface-muted bg-white text-navy hover:border-neon-cyan/60",
+} as const;
+
+export function SubmitButton({ label, loading, variant = "primary" }: SubmitButtonProps) {
   return (
     <button
       type="submit"
       disabled={loading}
-      className="inline-flex w-full items-center justify-center gap-2 rounded-chip bg-brand-red px-6 py-3.5 text-base font-semibold text-white shadow-soft transition hover:shadow-glow-cyan disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+      className={`inline-flex w-full items-center justify-center gap-2 rounded-chip px-6 py-3.5 text-base font-semibold transition disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto ${SUBMIT_VARIANT_CLASS[variant]}`}
     >
       {loading ? "Enviando..." : label}
     </button>

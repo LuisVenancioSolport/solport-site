@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "App Solport — Controle de Acesso e Gestão em Nuvem | Solport",
   description:
     "App Solport: plataforma em nuvem para controle de acesso, encomendas, mural de avisos e chamados — acessível por computador, tablet e celular, para condomínios em todo o estado de SP.",
+  alternates: { canonical: "/app-solport" },
 };
 
 const FEATURES: SolutionFeature[] = [

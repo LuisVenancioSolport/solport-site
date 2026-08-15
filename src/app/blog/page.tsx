@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Blog | Solport",
   description:
     "Conteúdo sobre segurança eletrônica, portaria virtual, controle de acesso e eletromobilidade para condomínios em São Paulo.",
+  alternates: { canonical: "/blog" },
 };
 
 export default function BlogPage() {
