@@ -14,7 +14,6 @@ const ROUTES = [
   "/solucoes/watching-u",
   "/diagnostico",
   "/agendar",
-  "/cases",
   "/privacidade",
   "/blog",
 ];

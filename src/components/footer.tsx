@@ -16,7 +16,6 @@ const NAV_LINKS = [
   { label: "Watching U", href: "/solucoes/watching-u" },
   { label: "Diagnóstico 360°", href: "/diagnostico" },
   { label: "Agendar", href: "/agendar" },
-  { label: "Cases", href: "/cases" },
   { label: "Blog", href: "/blog" },
 ];
 

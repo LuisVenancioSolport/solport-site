@@ -4,7 +4,6 @@ import { ElectromobilityHighlight } from "@/components/electromobility-highlight
 import { HowItWorks } from "@/components/how-it-works";
 import { SolutionsGrid } from "@/components/solutions-grid";
 import { AppSolportHighlight } from "@/components/app-solport-highlight";
-import { ProofSection } from "@/components/proof-section";
 import { Differentiators } from "@/components/differentiators";
 import { FAQ } from "@/components/faq";
 import { FinalCTA } from "@/components/final-cta";
@@ -20,7 +19,6 @@ export default function Home() {
       <HowItWorks />
       <SolutionsGrid />
       <AppSolportHighlight />
-      <ProofSection />
       <Differentiators />
       <FAQ />
       <FinalCTA />
