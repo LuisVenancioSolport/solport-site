@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { CalendarCheck } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { HeroInfographic } from "@/components/hero-infographic";
-import { buildWhatsAppLink, WHATSAPP_MESSAGES } from "@/lib/whatsapp";
+import { WhatsAppCTAButton } from "@/components/whatsapp-cta-button";
 import { trackEvent } from "@/lib/analytics";
 
 export function Hero() {
@@ -60,16 +60,14 @@ export function Hero() {
               <CalendarCheck className="h-5 w-5" aria-hidden="true" />
               Agendar Diagnóstico 360°
             </Link>
-            <a
-              href={buildWhatsAppLink(WHATSAPP_MESSAGES.diagnostico)}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => trackEvent("whatsapp_click", { origem: "hero" })}
+            <WhatsAppCTAButton
+              intent="diagnostico"
+              origin="hero"
               className="inline-flex items-center justify-center gap-2 rounded-chip border border-white/25 bg-white/5 px-6 py-3.5 text-base font-semibold text-white transition hover:border-[#25D366] hover:shadow-glow-cyan"
             >
               <WhatsAppIcon className="h-5 w-5 text-[#25D366]" />
               Falar no WhatsApp
-            </a>
+            </WhatsAppCTAButton>
           </motion.div>
 
           <motion.ul

@@ -18,12 +18,14 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true });
   }
 
+  const isWhatsApp = body.tipo_formulario === "whatsapp";
+
   if (
     !body.tipo_formulario ||
     !body.nome?.trim() ||
-    !body.telefone?.trim() ||
     !body.condominio?.trim() ||
-    !body.consentimento_lgpd
+    !body.consentimento_lgpd ||
+    (isWhatsApp ? !body.email?.trim() : !body.telefone?.trim())
   ) {
     return NextResponse.json(
       { ok: false, error: "Preencha os campos obrigatórios e aceite a política de privacidade." },
@@ -42,7 +44,8 @@ export async function POST(req: NextRequest) {
   const lead: LeadPayload = {
     tipo_formulario: body.tipo_formulario,
     nome: body.nome.trim(),
-    telefone: body.telefone.trim(),
+    telefone: body.telefone?.trim() || undefined,
+    email: body.email?.trim() || undefined,
     condominio: body.condominio.trim(),
     cidade: body.cidade?.trim() || undefined,
     interesse: body.interesse,

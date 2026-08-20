@@ -11,10 +11,11 @@ create table if not exists public.leads (
   id uuid primary key default gen_random_uuid(),
   created_at timestamptz not null default now(),
 
-  tipo_formulario text not null check (tipo_formulario in ('diagnostico', 'agendar')),
+  tipo_formulario text not null check (tipo_formulario in ('diagnostico', 'agendar', 'whatsapp')),
 
   nome text not null,
-  telefone text not null,
+  telefone text,
+  email text,
   condominio text not null,
   cidade text,
 
@@ -41,9 +42,19 @@ alter table public.leads enable row level security;
 -- Não conceder select/insert para os roles anon/authenticated.
 
 comment on table public.leads is
-  'Leads do Diagnóstico 360° e da página Agendar. Dados pessoais (nome, condomínio, telefone) — ver Política de Privacidade em /privacidade.
+  'Leads do Diagnóstico 360°, da página Agendar e do pré-contato via WhatsApp. Dados pessoais (nome, condomínio, telefone, e-mail) — ver Política de Privacidade em /privacidade.
 
   Política de retenção proposta (RPD Seção 19.2, pendente de confirmação do cliente):
   exclusão mediante solicitação do titular a contato@solport.com.br, e revisão/expurgo
   de leads sem retorno comercial a cada 12 meses. Ajustar este texto e o da página
   /privacidade juntos caso a política definitiva seja diferente.';
+
+-- Migração para tabela já existente (tipo_formulario "whatsapp" + campo email):
+-- se a tabela public.leads já foi criada antes desta versão do arquivo, rode
+-- os comandos abaixo para atualizá-la sem perder dados. Seguro rodar de novo
+-- (idempotente).
+alter table public.leads add column if not exists email text;
+alter table public.leads alter column telefone drop not null;
+alter table public.leads drop constraint if exists leads_tipo_formulario_check;
+alter table public.leads add constraint leads_tipo_formulario_check
+  check (tipo_formulario in ('diagnostico', 'agendar', 'whatsapp'));

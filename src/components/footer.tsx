@@ -3,8 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
-import { buildWhatsAppLink, WHATSAPP_MESSAGES } from "@/lib/whatsapp";
-import { trackEvent } from "@/lib/analytics";
+import { WhatsAppCTAButton } from "@/components/whatsapp-cta-button";
 
 const NAV_LINKS = [
   { label: "Eletromobilidade", href: "/eletromobilidade" },
@@ -36,16 +35,14 @@ export function Footer() {
               Soluções Tecnológicas em segurança eletrônica e eletromobilidade
               para condomínios em todo o estado de São Paulo.
             </p>
-            <a
-              href={buildWhatsAppLink(WHATSAPP_MESSAGES.diagnostico)}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => trackEvent("whatsapp_click", { origem: "footer" })}
+            <WhatsAppCTAButton
+              intent="diagnostico"
+              origin="footer"
               className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-navy transition hover:text-[#25D366]"
             >
               <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
               +55 11 4759-9009
-            </a>
+            </WhatsAppCTAButton>
           </div>
 
           <nav aria-label="Navegação do rodapé">

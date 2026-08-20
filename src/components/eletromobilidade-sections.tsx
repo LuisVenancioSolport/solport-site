@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Gauge, FileCheck2, Zap, MessageCircle, Building2, Home as HomeIcon } from "lucide-react";
-import { buildWhatsAppLink, WHATSAPP_MESSAGES } from "@/lib/whatsapp";
+import { WhatsAppCTAButton } from "@/components/whatsapp-cta-button";
 
 const SERVICES = [
   {
@@ -70,15 +70,14 @@ export function ViabilityStudy() {
               Enquanto isso, fale direto com nosso time e receba a análise de
               carga e viabilidade técnica pelo WhatsApp.
             </p>
-            <a
-              href={buildWhatsAppLink(WHATSAPP_MESSAGES.eletropostos)}
-              target="_blank"
-              rel="noopener noreferrer"
+            <WhatsAppCTAButton
+              intent="eletropostos"
+              origin="eletromobilidade_analise_carga"
               className="mt-5 inline-flex items-center gap-2 rounded-chip bg-navy px-5 py-2.5 text-sm font-semibold text-white transition hover:shadow-glow-magenta"
             >
               <MessageCircle className="h-4 w-4" aria-hidden="true" />
               Solicitar pelo WhatsApp
-            </a>
+            </WhatsAppCTAButton>
           </motion.div>
         </div>
       </div>

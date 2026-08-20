@@ -8,7 +8,6 @@ import {
 } from "@/components/eletromobilidade-sections";
 import { FAQ, type FAQItem } from "@/components/faq";
 import { FinalCTA } from "@/components/final-cta";
-import { WHATSAPP_MESSAGES } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
   title: "Eletropostos em Condomínios de São Paulo | Solport",
@@ -60,7 +59,7 @@ export default function EletromobilidadePage() {
           "Referência real: no Residencial Alto da Serra, 18 vagas foram instaladas em 21 dias, com payback estimado em 14 meses — a mesma simulação que fazemos para o seu condomínio a partir do Diagnóstico 360°",
         ]}
         ctaLabel="Solicitar Análise de Carga / Viabilidade Técnica"
-        whatsappMessage={WHATSAPP_MESSAGES.eletropostos}
+        whatsappIntent="eletropostos"
         accent="magenta"
       />
       <ViabilityStudy />
@@ -74,7 +73,7 @@ export default function EletromobilidadePage() {
         subtitle="Nosso time avalia a carga elétrica disponível e o melhor projeto de eletropostos para o seu condomínio, sem compromisso."
         primaryLabel="Solicitar Análise de Carga"
         primaryHref="/diagnostico?interesse=eletromobilidade"
-        secondaryMessage={WHATSAPP_MESSAGES.eletropostos}
+        secondaryIntent="eletropostos"
       />
     </>
   );

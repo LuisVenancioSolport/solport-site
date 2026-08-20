@@ -7,7 +7,6 @@ import { PageHero } from "@/components/page-hero";
 import { HowItWorks } from "@/components/how-it-works";
 import { FAQ, type FAQItem } from "@/components/faq";
 import { FinalCTA } from "@/components/final-cta";
-import { WHATSAPP_MESSAGES } from "@/lib/whatsapp";
 
 export interface SolutionFeature {
   icon: ReactNode;
@@ -57,7 +56,7 @@ export function SolutionPageTemplate({
         subtitle={subtitle}
         bullets={heroBullets}
         ctaLabel={ctaLabel}
-        whatsappMessage={WHATSAPP_MESSAGES.diagnostico}
+        whatsappIntent="diagnostico"
         accent="cyan"
       />
 

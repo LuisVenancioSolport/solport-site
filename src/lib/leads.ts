@@ -1,11 +1,12 @@
-export type TipoFormulario = "diagnostico" | "agendar";
+export type TipoFormulario = "diagnostico" | "agendar" | "whatsapp";
 export type Interesse = "seguranca" | "eletromobilidade" | "ambos";
 export type MelhorHorario = "manha" | "tarde" | "noite";
 
 export interface LeadPayload {
   tipo_formulario: TipoFormulario;
   nome: string;
-  telefone: string;
+  telefone?: string;
+  email?: string;
   condominio: string;
   cidade?: string;
   interesse?: Interesse;

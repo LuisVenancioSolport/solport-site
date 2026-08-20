@@ -4,7 +4,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { CalendarCheck } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
-import { buildWhatsAppLink, WHATSAPP_MESSAGES } from "@/lib/whatsapp";
+import { WhatsAppCTAButton } from "@/components/whatsapp-cta-button";
+import type { WhatsAppIntent } from "@/lib/whatsapp";
 import { trackEvent } from "@/lib/analytics";
 
 interface FinalCTAProps {
@@ -14,7 +15,7 @@ interface FinalCTAProps {
   primaryLabel?: string;
   primaryHref?: string;
   secondaryLabel?: string;
-  secondaryMessage?: string;
+  secondaryIntent?: WhatsAppIntent;
 }
 
 export function FinalCTA({
@@ -24,7 +25,7 @@ export function FinalCTA({
   primaryLabel = "Agendar Diagnóstico 360°",
   primaryHref = "/diagnostico",
   secondaryLabel = "Falar no WhatsApp",
-  secondaryMessage = WHATSAPP_MESSAGES.diagnostico,
+  secondaryIntent = "diagnostico",
 }: FinalCTAProps) {
   return (
     <section id={id} className="relative overflow-hidden bg-navy py-20 sm:py-24">
@@ -63,16 +64,14 @@ export function FinalCTA({
             <CalendarCheck className="h-5 w-5" aria-hidden="true" />
             {primaryLabel}
           </Link>
-          <a
-            href={buildWhatsAppLink(secondaryMessage)}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => trackEvent("whatsapp_click", { origem: "final_cta" })}
+          <WhatsAppCTAButton
+            intent={secondaryIntent}
+            origin="final_cta"
             className="inline-flex items-center justify-center gap-2 rounded-chip border border-white/25 bg-white/5 px-6 py-3.5 text-base font-semibold text-white transition hover:border-[#25D366] hover:shadow-glow-cyan"
           >
             <WhatsAppIcon className="h-5 w-5 text-[#25D366]" />
             {secondaryLabel}
-          </a>
+          </WhatsAppCTAButton>
         </motion.div>
       </div>
     </section>

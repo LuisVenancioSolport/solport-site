@@ -4,8 +4,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { CalendarCheck } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
-import { buildWhatsAppLink } from "@/lib/whatsapp";
-import { trackEvent } from "@/lib/analytics";
+import { WhatsAppCTAButton } from "@/components/whatsapp-cta-button";
+import type { WhatsAppIntent } from "@/lib/whatsapp";
 
 const ACCENTS = {
   cyan: {
@@ -31,7 +31,7 @@ interface PageHeroProps {
   subtitle: string;
   bullets?: string[];
   ctaLabel?: string;
-  whatsappMessage?: string;
+  whatsappIntent?: WhatsAppIntent;
   accent?: keyof typeof ACCENTS;
   hideCtaRow?: boolean;
 }
@@ -43,7 +43,7 @@ export function PageHero({
   subtitle,
   bullets = [],
   ctaLabel,
-  whatsappMessage,
+  whatsappIntent,
   accent = "cyan",
   hideCtaRow = false,
 }: PageHeroProps) {
@@ -108,33 +108,29 @@ export function PageHero({
           </motion.ul>
         )}
 
-        {!hideCtaRow && ctaLabel && whatsappMessage && (
+        {!hideCtaRow && ctaLabel && whatsappIntent && (
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-10 flex flex-col gap-4 sm:flex-row"
           >
-            <a
-              href={buildWhatsAppLink(whatsappMessage)}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => trackEvent("whatsapp_click", { origem: "page_hero_primario" })}
+            <WhatsAppCTAButton
+              intent={whatsappIntent}
+              origin="page_hero_primario"
               className={`inline-flex items-center justify-center gap-2 rounded-chip bg-brand-red px-6 py-3.5 text-base font-semibold text-white shadow-soft transition ${a.glow}`}
             >
               <CalendarCheck className="h-5 w-5" aria-hidden="true" />
               {ctaLabel}
-            </a>
-            <a
-              href={buildWhatsAppLink(whatsappMessage)}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => trackEvent("whatsapp_click", { origem: "page_hero_secundario" })}
+            </WhatsAppCTAButton>
+            <WhatsAppCTAButton
+              intent={whatsappIntent}
+              origin="page_hero_secundario"
               className={`inline-flex items-center justify-center gap-2 rounded-chip border border-white/25 bg-white/5 px-6 py-3.5 text-base font-semibold text-white transition hover:border-[#25D366] ${a.glow}`}
             >
               <WhatsAppIcon className="h-5 w-5 text-[#25D366]" />
               Falar no WhatsApp
-            </a>
+            </WhatsAppCTAButton>
           </motion.div>
         )}
       </div>

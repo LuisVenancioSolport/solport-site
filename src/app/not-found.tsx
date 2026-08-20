@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Home } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
-import { buildWhatsAppLink, WHATSAPP_MESSAGES } from "@/lib/whatsapp";
+import { WhatsAppCTAButton } from "@/components/whatsapp-cta-button";
 
 export default function NotFound() {
   return (
@@ -29,15 +29,14 @@ export default function NotFound() {
             <Home className="h-5 w-5" aria-hidden="true" />
             Voltar para a Home
           </Link>
-          <a
-            href={buildWhatsAppLink(WHATSAPP_MESSAGES.diagnostico)}
-            target="_blank"
-            rel="noopener noreferrer"
+          <WhatsAppCTAButton
+            intent="diagnostico"
+            origin="404"
             className="inline-flex items-center justify-center gap-2 rounded-chip border border-white/25 bg-white/5 px-6 py-3.5 text-base font-semibold text-white transition hover:border-[#25D366]"
           >
             <WhatsAppIcon className="h-5 w-5 text-[#25D366]" />
             Falar no WhatsApp
-          </a>
+          </WhatsAppCTAButton>
         </div>
       </div>
     </section>

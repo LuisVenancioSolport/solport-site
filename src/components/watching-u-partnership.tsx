@@ -3,8 +3,7 @@
 import { motion } from "framer-motion";
 import { Building2, ShieldCheck } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
-import { buildWhatsAppLink, WHATSAPP_MESSAGES } from "@/lib/whatsapp";
-import { trackEvent } from "@/lib/analytics";
+import { WhatsAppCTAButton } from "@/components/whatsapp-cta-button";
 
 const PARTNERS = [
   {
@@ -95,20 +94,18 @@ export function WatchingUPartnership() {
           em todo o processo de cadastro.
         </p>
 
-        <motion.a
+        <WhatsAppCTAButton
+          intent="smartSampa"
+          origin="watching_u_smart_sampa"
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.25 }}
-          href={buildWhatsAppLink(WHATSAPP_MESSAGES.smartSampa)}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => trackEvent("whatsapp_click", { origem: "watching_u_smart_sampa" })}
           className="mt-8 inline-flex items-center gap-2 rounded-chip bg-brand-red px-6 py-3.5 text-base font-semibold text-white shadow-soft transition hover:shadow-glow-cyan"
         >
           <WhatsAppIcon className="h-5 w-5" />
           Quero integrar meu condomínio ao Smart Sampa / Muralha Paulista
-        </motion.a>
+        </WhatsAppCTAButton>
       </div>
     </section>
   );

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/page-hero";
 import { AgendarForm } from "@/components/agendar-form";
-import { WHATSAPP_MESSAGES } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
   title: "Agendar | Solport",
@@ -24,7 +23,7 @@ export default function AgendarPage() {
           "Segurança eletrônica ou eletromobilidade — conte o que precisa e receba uma proposta pronta para levar à assembleia.",
         ]}
         ctaLabel="Falar no WhatsApp agora"
-        whatsappMessage={WHATSAPP_MESSAGES.diagnostico}
+        whatsappIntent="diagnostico"
         accent="cyan"
       />
       <section className="bg-white py-16 sm:py-20">

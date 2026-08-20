@@ -5,8 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
-import { buildWhatsAppLink, WHATSAPP_MESSAGES } from "@/lib/whatsapp";
-import { trackEvent } from "@/lib/analytics";
+import { WhatsAppCTAButton } from "@/components/whatsapp-cta-button";
 
 const SOLUTIONS_LINKS = [
   { label: "Portaria Virtual", href: "/solucoes/portaria-virtual" },
@@ -80,16 +79,14 @@ export function Header() {
           >
             Solicitar Diagnóstico
           </Link>
-          <a
-            href={buildWhatsAppLink(WHATSAPP_MESSAGES.diagnostico)}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => trackEvent("whatsapp_click", { origem: "header" })}
+          <WhatsAppCTAButton
+            intent="diagnostico"
+            origin="header"
             className="inline-flex items-center gap-1.5 rounded-chip border border-navy/15 px-3 py-2 text-sm font-semibold text-navy transition hover:border-[#25D366] sm:px-4"
           >
             <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
             <span className="hidden sm:inline">WhatsApp</span>
-          </a>
+          </WhatsAppCTAButton>
           <button
             type="button"
             onClick={() => setMenuOpen((open) => !open)}

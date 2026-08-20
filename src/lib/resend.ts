@@ -10,11 +10,18 @@ function getResendClient(): Resend | null {
   return key ? new Resend(key) : null;
 }
 
+const TIPO_FORMULARIO_LABELS: Record<LeadPayload["tipo_formulario"], string> = {
+  diagnostico: "Diagnóstico 360°",
+  agendar: "Agendar",
+  whatsapp: "WhatsApp (pré-contato)",
+};
+
 function renderLeadEmailHtml(lead: LeadPayload): string {
   const rows: [string, string | undefined][] = [
-    ["Formulário", lead.tipo_formulario === "diagnostico" ? "Diagnóstico 360°" : "Agendar"],
+    ["Formulário", TIPO_FORMULARIO_LABELS[lead.tipo_formulario]],
     ["Nome", lead.nome],
     ["Telefone", lead.telefone],
+    ["E-mail", lead.email],
     ["Condomínio", lead.condominio],
     ["Cidade", lead.cidade],
     ["Interesse", lead.interesse ? INTERESSE_LABELS[lead.interesse] : undefined],

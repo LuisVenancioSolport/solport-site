@@ -5,7 +5,6 @@ import { ComparisonTable } from "@/components/comparison-table";
 import { HowItWorks } from "@/components/how-it-works";
 import { FAQ, type FAQItem } from "@/components/faq";
 import { FinalCTA } from "@/components/final-cta";
-import { WHATSAPP_MESSAGES } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
   title: "Portaria Virtual em São Paulo | Solport",
@@ -67,7 +66,7 @@ export default function PortariaVirtualPage() {
           "Referência real: no Jardins do Vale, a portaria virtual reduziu o custo mensal em 38% e chegou a 0 ocorrências não registradas em 12 meses, com SLA médio de resposta de 4 minutos",
         ]}
         ctaLabel="Agendar Diagnóstico 360°"
-        whatsappMessage={WHATSAPP_MESSAGES.diagnostico}
+        whatsappIntent="diagnostico"
         accent="cyan"
       />
       <div className="relative h-64 w-full sm:h-80 lg:h-[420px]">
