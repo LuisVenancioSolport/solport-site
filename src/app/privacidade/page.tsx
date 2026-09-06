@@ -110,9 +110,8 @@ export default function PrivacidadePage() {
               qualquer momento você pode solicitar a exclusão antecipada dos seus dados — ver seção 9.
             </p>
             <p className="text-sm text-navy/55">
-              Nota: os prazos acima são a proposta padrão da Solport, baseada em prática de mercado, enquanto os
-              prazos definitivos não são confirmados formalmente pelo responsável do projeto; ajuste este texto
-              caso os prazos oficiais sejam diferentes.
+              Estes prazos podem ser revisados periodicamente para refletir mudanças em nossos processos ou na
+              legislação aplicável; a versão vigente desta política é sempre a publicada nesta página.
             </p>
           </section>
 
